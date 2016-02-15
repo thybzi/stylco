@@ -37,7 +37,7 @@ Extend another component (that means, add imports to same-called files):
 stylco mycomponent othercomponent
 ```
 Create component in subdirectory (and a subdirectory itself, if not exists).
-Also add `@import 'desktop/mycomponent'` line into `desktop.styl` ([configurable](#append_to_buildfile)):
+(Also can add `@import 'desktop/mycomponent'` line into `desktop.styl`, if [append_to_buildfile](#append_to_buildfile) options is enabled.)
 ```
 stylco desktop/mycomponent
 ```
@@ -103,12 +103,11 @@ Outputs `@import 'foo/bar.less'` instead of `@import 'foo/bar'`.
 
 
 #### append_to_buildfile ####
-`boolean`, default: `true`
+`boolean`, default: `false`
 
 When creating `qux/foobar` component, also add `@import 'qux/foobar'` into `qux.styl` buildfile. If `qux.styl` doesn't exist, it will be created. 
 
-Disable this option if you don't use buildfiles, or if you prefer asterisk imports such as `@import 'qux/*'`.
-
+Enable this option if you prefer buildfiles with explicitly listed components, or when using LESS (which doesn't Zsupport [import globbing](http://stylus-lang.com/docs/import.html#file-globbing) such as `@import 'qux/*'`.
 
 
 #### allow_buildfile_outside_basedir ####
@@ -226,7 +225,7 @@ Here are default configuration values for Stylco. You can override any of them w
     "file_ext": ".styl",
     "import_rule": "@import",
     "import_with_ext": false,
-    "append_to_buildfile": true,
+    "append_to_buildfile": false,
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
     "quote": "'",
