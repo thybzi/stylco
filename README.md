@@ -129,7 +129,7 @@ Quotes type (used basicly for imports). Note that for changing single-quote to d
 
 
 #### indent ####
-`string`, default: `"    "` (four spaces)
+`string`, default: `"  "` (two spaces)
 
 Indentation unit in your codestyle. You may use any number of spaces or tabs if you prefer.
 
@@ -212,7 +212,7 @@ The following placeholders supported:
 * `{{SEMICOLON}}` — `;` or `""`(empty string), respecting **[use_semicolons](#use_semicolons)** option value.
 * `{{QUOTE}}` — `'` or maybe `"`, respecting **[quote](#quote)** option value.
 * `{{NEWLINE}}` — `\n` or maybe `\r\n` or `\r`, respecting **[newline](#newline)** option value.
-* `{{INDENT}}` — `"    "` (four spaces) or maybe two tabs or whatever, respecting **[indent](#indent)** option value.
+* `{{INDENT}}` — `"  "` (two spaces) or maybe four spaces or one tab or whatever, respecting **[indent](#indent)** option value.
 
 If you don't need any custom content for the file, set this value to `null` or just omit it.
 
@@ -229,7 +229,7 @@ Here are default configuration values for Stylco. You can override any of them w
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
     "quote": "'",
-    "indent": "    ",
+    "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,
     "file_write_options": {

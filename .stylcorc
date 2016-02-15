@@ -7,7 +7,7 @@
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
     "quote": "'",
-    "indent": "    ",
+    "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,
     "file_write_options": {
