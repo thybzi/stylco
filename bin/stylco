@@ -1,0 +1,32 @@
+#! /usr/bin/env node
+(function () {
+    'use strict';
+
+    // Read command line arguments
+    var args = process.argv.slice(2),
+        help_arg_index = args.indexOf('--help'),
+        debug_arg_index = args.indexOf('--debug'),
+        debug,
+        destination,
+        extend_from,
+        stylco;
+
+    // If no `--help` argument found, and `--debug` is not first argument, process other arguments
+    if (!~help_arg_index && (debug_arg_index !== 0)) {
+        debug = !!~debug_arg_index;
+        destination = args[0];
+        if (debug_arg_index !== 1) {
+            extend_from = args[1];
+        }
+    }
+
+    // Display correct usage example if necessary
+    if (~help_arg_index || !destination) {
+        console.log('Usage: stylco <destination> [<source>] [--debug]');
+        process.exit(1);
+    }
+
+    // Initialize module and create component
+    stylco = require('../lib/stylco')(debug);
+    stylco.create(destination, extend_from);
+})();

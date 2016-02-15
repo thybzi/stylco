@@ -1,0 +1,49 @@
+{
+    "basedir": "styl/",
+    "file_ext": ".styl",
+    "import_rule": "@import",
+    "import_with_ext": false,
+    "append_to_buildfile": true,
+    "allow_buildfile_outside_basedir": false,
+    "use_semicolons": false,
+    "quote": "'",
+    "indent": "    ",
+    "newline": "\n",
+    "ensure_trailing_newline": true,
+    "file_write_options": {
+        "encoding": "utf8",
+        "mode": "0o644"
+    },
+    "files": {
+        ".": {
+            "filename": "{{NAME}}",
+            "imports": ["_"],
+            "import_extend_source": true,
+            "content": "{{NEWLINE}}.{{NAME}}{{NEWLINE}}{{INDENT}}// your code here"
+        },
+        "c": {
+            "filename": "{{NAME}}__constants",
+            "imports": [],
+            "import_extend_source": true,
+            "content": null
+        },
+        "m": {
+            "filename": "{{NAME}}__mixins",
+            "imports": ["c"],
+            "import_extend_source": true,
+            "content": null
+        },
+        "_": {
+            "filename": "__",
+            "imports": ["c", "m"],
+            "import_extend_source": false,
+            "content": null
+        },
+        "i": {
+            "filename": "index",
+            "imports": ["_", "."],
+            "import_extend_source": false,
+            "content": null
+        }
+    }
+}
