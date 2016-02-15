@@ -215,6 +215,8 @@ The following placeholders supported:
 * `{{NEWLINE}}` — `\n` or maybe `\r\n` or `\r`, respecting **[newline](#newline)** option value.
 * `{{INDENT}}` — `"    "` (four spaces) or maybe two tabs or whatever, respecting **[indent](#indent)** option value.
 
+If you don't need any custom content for the file, set this value to `null` or just omit it.
+
 
 #### All default values together ####
 Here are default configuration values for Stylco. You can override any of them with a file called `.stylcorc` put in your project's document root (must be valid JSON). Note that any value set in your file overrides default key entirely.
@@ -272,18 +274,27 @@ Here are default configuration values for Stylco. You can override any of them w
 
 ## FAQ / TODO ##
 
-### What are those __.styl needed for? ###
+### What are those \__.styl needed for? ###
 Stylus misses very useful LESS's feature — [reference import](http://lesscss.org/features/#import-options). It allows importing variables and mixins without outputting any CSS code.
 
 In my concept, `__.styl` only holds constants and mixins imports, so LESS's reference import may be somehow emulated in Stylus with simple line: ```@import path/to/mycomponent/__```.
 
-### Why no codestyle option for curly braces? ###
-Curly braces are not used in import constructs in any way, so for now that could be enough to add them to **[content](#content)** templates manually.
-
-In future, such option may be implemented
+### Why no codestyle option for curly braces and colons? ###
+Neither curly braces nor colons are used in import constructs in any way, so for now that could be enough to add them to **[content](#content)** templates manually.
 
 ### Does buildfile appending option support recursive "bubbling"? ###
 For now, negative. Only immediate parent level buildfile is being **[updated or created](#append_to_buildfile)**. In future this limit may be eliminated.
 
 ### Why default mode for creating file is 0o644? ###
 Indeed, [in NodeJS fs module](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) default mode is `0o644`. This may be a subject to reconsider in future.
+
+### A command for batch adding many components? ###
+Working on it.
+
+### Is it possible to creating file outside component directory? ###
+Things like `"../{{NAME}}"` in filename seem to behave buggy in the current version.
+
+There are some things to reconsider, but also working on it.
+
+### Why there is only adding, not deleting components with a simple command? ###
+Adding new structure, you don't break things down. Deleting existing structure with simple command is dangerous. Please do that *manually*.
