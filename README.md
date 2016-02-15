@@ -106,7 +106,9 @@ Outputs `@import 'foo/bar.less'` instead of `@import 'foo/bar'`.
 `boolean`, default: `true`
 
 When creating `qux/foobar` component, also add `@import 'qux/foobar'` into `qux.styl` buildfile. If `qux.styl` doesn't exist, it will be created. 
+
 Disable this option if you don't use buildfiles, or if you prefer asterisk imports such as `@import 'qux/*'`.
+
 
 
 #### allow_buildfile_outside_basedir ####
@@ -149,7 +151,9 @@ One more codestyle option. Preserving newline in the end of every file help to a
 `string` or `object`, default: `{ "encoding": "utf8", "mode": "0o644" }`
 
 Passed to file write operations in NodeJS (refers to `options` param in [fs module doc](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)).
+
 Can be replaced with just single string representing encoding: `"utf8"`.
+
 *Please avoid adding `mode` key.*
 
 
@@ -171,25 +175,38 @@ Outer object key is the `string` **identifier of file kind**. Better keep it sho
 Each key (identifier) refers to an object with the following keys:
 
 ##### filename #####
-`string`. 
-Filename mask with `{{NAME}}` placeholder replaced with component name. E.g. `{{NAME}}__mixins` becomes `mycomponent__mixins`. 
+`string`.
+
+Filename mask with `{{NAME}}` placeholder replaced with component name. E.g. `{{NAME}}__mixins` becomes `mycomponent__mixins`.
+
 *Please don't add file extension here!* (use **[file_ext](#file_ext)** and/or **[import_with_ext](#import_with_ext)** options for handling file extensions).
+
 
 ##### imports #####
 *(optional)* `string` or array of `string`s
+
 Array of *file identifiers* (e.g., outer object keys) listing *other files from the same component* to be imported into this file. E.g., if you want to import constants and mixins, you may set it to `["c", "m"]`.
+
 If there is only single file to be imported, array could be changed to single string, e.g. `"c"` for only constants to import.
+
 If there are no other files to import, the key can be omitted.
+
 
 ##### import_extend_source #####
 *(optional)* `boolean`
-Set `true` if you want to import same-named file when extending from another component. 
+
+Set `true` if you want to import same-named file when extending from another component.
+
 E.g. when using ```stylco mobile/button _base/button``` and setting the option `true` for constants file, you'll get additional ```@import '../_base/button/button__constants'``` line in your mobile `button__constants.styl` file. This import line will be placed first (on the very top of file).
-If this options isn't needed for specific file, may be set `false` or omitted. 
+
+If this options isn't needed for specific file, may be set `false` or omitted.
+
 
 ##### content #####
 *(optional)* `string` or `null`
+
 A template for any additional file content just after import lines.
+
 The following placeholders supported:
 * `{{NAME}}` — component name, e.g. `button`. Useful for generating default selector.
 * `{{IMPORT}}` — `@import` or maybe `@require` rule, respecting **[import_rule](#import_rule)** option value.
@@ -257,10 +274,12 @@ Here are default configuration values for Stylco. You can override any of them w
 
 ### What are those __.styl needed for? ###
 Stylus misses very useful LESS's feature — [reference import](http://lesscss.org/features/#import-options). It allows importing variables and mixins without outputting any CSS code.
+
 In my concept, `__.styl` only holds constants and mixins imports, so LESS's reference import may be somehow emulated in Stylus with simple line: ```@import path/to/mycomponent/__```.
 
 ### Why no codestyle option for curly braces? ###
 Curly braces are not used in import constructs in any way, so for now that could be enough to add them to **[content](#content)** templates manually.
+
 In future, such option may be implemented
 
 ### Does buildfile appending option support recursive "bubbling"? ###
