@@ -301,3 +301,8 @@ There are some things to reconsider, but also working on it.
 
 ### Why there is only adding, not deleting components with a simple command? ###
 Adding new structure, you don't break things down. Deleting existing structure with simple command is dangerous. Please do that *manually*.
+
+
+### Version history ###
+
+* **0.1.0** *(2016-02-15)*: Initial release
