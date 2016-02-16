@@ -305,4 +305,12 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.1** *(2016-02-16)*:
+  * Fixed incorrect behavior of **[import_with_ext](#import_with_ext)** option when appending to buildfile
+  * Changed *default* config values for the following options (you can override any with `.stylcorc` file in your project root):
+    * **[append_to_buildfile](#import_with_ext)** (now `false` by default, as using Stylus's [import globbing](http://stylus-lang.com/docs/import.html#file-globbing) is more handy)
+    * **[indent](#indent)** (now two spaces by default as it is more widespread with Stylus)
+    * **[quote](#quote)** (now double-quote by default as it is more common pattern in Stylus/LESS world)
+    * **[file_write_options](#file_write_options)** (removed `mode`, leaving only `utf8` in default value)
+  * Minor fixes and doc updates
 * **0.1.0** *(2016-02-15)*: Initial release
