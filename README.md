@@ -75,7 +75,7 @@ stylco.create('desktop/othercomponent', '_base/foobar');
 ### Configuration ###
 Stylco is configured with a file called `.stylcorc` put in your project's document root. It must contain *valid JSON*.
 
-Note that any value set in your file will override the default one *entirely*, including complex values such as `files` and `file_write_options`.
+Note that any value set in your file will override the default one *entirely*, including complex values such as `files`.
 
 
 #### basedir ####
@@ -147,13 +147,19 @@ One more codestyle option. Preserving newline in the end of every file help to a
 
 
 #### write_file_options ####
-`string` or `object`, default: `{ "encoding": "utf8", "mode": "0o644" }`
+`string` or `object`, default: `"utf8"`
 
 Passed to file write operations in NodeJS (refers to `options` param in [fs module doc](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)).
 
-Can be replaced with just single string representing encoding: `"utf8"`.
+You may set this in extended format (`mode` will be automatically converted from string to octal number):
+```
+"file_write_options": {
+        "encoding": "utf8",
+        "mode": "0o644"
+    }
+```
 
-*Please avoid adding `mode` key.*
+Single string value (such as default one: `"utf8"`) represents just encoding.
 
 
 #### files ####
@@ -232,10 +238,7 @@ Here are default configuration values for Stylco. You can override any of them w
     "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,
-    "file_write_options": {
-        "encoding": "utf8",
-        "mode": "0o644"
-    },
+    "file_write_options": "utf8",
     "files": {
         ".": {
             "filename": "{{NAME}}",
@@ -283,9 +286,6 @@ Neither curly braces nor colons are used in import constructs in any way, so for
 
 ### Does buildfile appending option support recursive "bubbling"? ###
 For now, negative. Only immediate parent level buildfile is being **[updated or created](#append_to_buildfile)**. In future this limit may be eliminated.
-
-### Why default mode for creating file is 0o644? ###
-Indeed, [in NodeJS fs module](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) default mode is `0o644`. This may be a subject to reconsider in future.
 
 ### A command for batch adding many components? ###
 Working on it.

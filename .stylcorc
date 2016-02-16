@@ -10,10 +10,7 @@
     "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,
-    "file_write_options": {
-        "encoding": "utf8",
-        "mode": "0o644"
-    },
+    "file_write_options": "utf8",
     "files": {
         ".": {
             "filename": "{{NAME}}",
