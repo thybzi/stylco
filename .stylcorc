@@ -6,7 +6,7 @@
     "append_to_buildfile": false,
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
-    "quote": "'",
+    "quote": "\"",
     "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,

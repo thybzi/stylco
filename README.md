@@ -123,9 +123,13 @@ End lines with semicolons. If you use LESS or SCSS, that should be turned on.
 
 
 #### quote ####
-`string`, default: `"'"`
+`string`, default: `"\""`
 
-Quotes type (used basicly for imports). Note that for changing single-quote to double-quote you need to escape the value preserving double-quotes around: `"\""` (remember that config is JSON, and JSON strings can only be double-quoted).
+Quotes type (used basicly for imports). Default value stands for double-quote, that is: ```@import "mycomponent"```.
+
+Slash escaping is only needed for reserving double-quotes around: `"\""` (to keep config valid JSON), and is not outputted.
+
+If you prefer single-quotes, this escaping is not needed: `"'"`.
 
 
 #### indent ####
@@ -216,7 +220,7 @@ The following placeholders supported:
 * `{{NAME}}` — component name, e.g. `button`. Useful for generating default selector.
 * `{{IMPORT}}` — `@import` or maybe `@require` rule, respecting **[import_rule](#import_rule)** option value.
 * `{{SEMICOLON}}` — `;` or `""`(empty string), respecting **[use_semicolons](#use_semicolons)** option value.
-* `{{QUOTE}}` — `'` or maybe `"`, respecting **[quote](#quote)** option value.
+* `{{QUOTE}}` — `"` or maybe `'`, respecting **[quote](#quote)** option value.
 * `{{NEWLINE}}` — `\n` or maybe `\r\n` or `\r`, respecting **[newline](#newline)** option value.
 * `{{INDENT}}` — `"  "` (two spaces) or maybe four spaces or one tab or whatever, respecting **[indent](#indent)** option value.
 
@@ -234,7 +238,7 @@ Here are default configuration values for Stylco. You can override any of them w
     "append_to_buildfile": false,
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
-    "quote": "'",
+    "quote": "\"",
     "indent": "  ",
     "newline": "\n",
     "ensure_trailing_newline": true,
