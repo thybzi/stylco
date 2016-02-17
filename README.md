@@ -305,6 +305,9 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.2** *(2016-02-18)*:
+  * Fixed incorrect relative paths to component extending from
+  * Fixed relative paths handling (style files outside component directory)
 * **0.1.1** *(2016-02-16)*:
   * Fixed incorrect behavior of **[import_with_ext](#import_with_ext)** option when appending to buildfile
   * Changed *default* config values for the following options (you can override any with `.stylcorc` file in your project root):
