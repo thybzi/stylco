@@ -295,7 +295,7 @@ For now, negative. Only immediate parent level buildfile is being **[updated or 
 Working on it.
 
 ### Is it possible to creating file outside component directory? ###
-Things like `"../{{NAME}}"` in filename seem to behave buggy in the current version.
+Yes, just make the filename similar to `"../{{NAME}}"`.
 
 There are some things to reconsider, but also working on it.
 
