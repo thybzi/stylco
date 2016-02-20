@@ -11,30 +11,35 @@
     "newline": "\n",
     "ensure_trailing_newline": true,
     "file_write_options": "utf8",
+    "virtual_component_prefix": null,
     "files": {
         ".": {
             "filename": "{{NAME}}",
             "imports": ["_"],
             "import_extend_source": true,
-            "content": "{{NEWLINE}}.{{NAME}}{{NEWLINE}}{{INDENT}}// your code here"
+            "content": "{{NEWLINE}}.{{NAME}}{{NEWLINE}}{{INDENT}}// your code here",
+            "no_virtual": true
         },
         "c": {
             "filename": "{{NAME}}__constants",
             "imports": [],
             "import_extend_source": true,
-            "content": null
+            "content": null,
+            "no_virtual": false
         },
         "m": {
             "filename": "{{NAME}}__mixins",
             "imports": ["c"],
             "import_extend_source": true,
-            "content": null
+            "content": null,
+            "no_virtual": false
         },
         "_": {
             "filename": "__",
             "imports": ["c", "m"],
             "import_extend_source": false,
-            "content": null
+            "content": null,
+            "no_virtual": false
         },
         "i": {
             "filename": "index",
