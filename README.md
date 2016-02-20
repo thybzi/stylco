@@ -339,6 +339,9 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.3** *(2016-02-21)*:
+  * Added support for virtual components (i.e. producing no CSS output); see **[virtual_component_prefix](#virtual_component_prefix)** and **[no_virtual](#no_virtual)** options
+  * Minor doc improvements
 * **0.1.2** *(2016-02-18)*:
   * Fixed incorrect relative paths to component extending from
   * Fixed relative paths handling (style files outside component directory)
