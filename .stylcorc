@@ -45,7 +45,8 @@
             "filename": "index",
             "imports": ["_", "."],
             "import_extend_source": false,
-            "content": null
+            "content": null,
+            "no_virtual": false
         }
     }
 }
