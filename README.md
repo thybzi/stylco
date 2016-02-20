@@ -59,14 +59,14 @@ If you really need it...
 npm install --save stylco
 ```
 Common mode:
-```
+```javascript
 var stylco = require('stylco');
 stylco.create('mycomponent');
 stylco.create('mycomponent', 'othercomponent');
 stylco.create('desktop/othercomponent', '_base/foobar');
 ```
 Debug mode (note the `true`):
-```
+```javascript
 var stylco = require('stylco')(true);
 stylco.create('desktop/othercomponent', '_base/foobar');
 ```
@@ -156,7 +156,7 @@ One more codestyle option. Preserving newline in the end of every file help to a
 Passed to file write operations in NodeJS (refers to `options` param in [fs module doc](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)).
 
 You may set this in extended format (`mode` will be automatically converted from string to octal number):
-```
+```json
 "file_write_options": {
         "encoding": "utf8",
         "mode": "0o644"
@@ -185,7 +185,7 @@ If option value is `null`, no virtual component recognition is made, and every c
 
 The most interesting and powerful option. With this you set which files should be created inside every component directory, and what would be their default content.
 
-```
+```javascript
 {
     ".": { "filename": …, "imports": …, "import_extend_source": …, "content": …, "no_virtual": … },
     "m": { "filename": …, "imports": …, "import_extend_source": …, "content": …, "no_virtual": … },
@@ -257,7 +257,7 @@ If `no_virtual` value set to `false` or omitted, no special rules apply on this 
 
 #### All default values together ####
 Here are default configuration values for Stylco. You can override any of them with a file called `.stylcorc` put in your project's document root (must be valid JSON). Note that any value set in your file overrides default key entirely.
-```
+```json
 {
     "basedir": "styl/",
     "file_ext": ".styl",
