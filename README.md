@@ -328,7 +328,10 @@ For now, negative. Only immediate parent level buildfile is being **[updated or 
 ### A command for batch adding many components? ###
 Working on it.
 
-### Is it possible to creating file outside component directory? ###
+### Is it possible to create file in subdirectory of component directory? ###
+Yes, use filename similar to `"subdir/{{NAME}}"`.
+
+### Is it possible to create file outside component directory? ###
 Yes, just make the filename similar to `"../{{NAME}}"`.
 
 There are some things to reconsider, but also working on it.
