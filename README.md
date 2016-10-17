@@ -107,7 +107,8 @@ Outputs `@import 'foo/bar.less'` instead of `@import 'foo/bar'`.
 
 When creating `qux/foobar` component, also add `@import 'qux/foobar'` into `qux.styl` buildfile. If `qux.styl` doesn't exist, it will be created. 
 
-Enable this option if you prefer buildfiles with explicitly listed components, or when using LESS (which doesn't Zsupport [import globbing](http://stylus-lang.com/docs/import.html#file-globbing) such as `@import 'qux/*'`.
+Enable this option if you prefer buildfiles with explicitly listed components, or when using LESS (which doesn't support 
+[import globbing](http://stylus-lang.com/docs/import.html#file-globbing) such as `@import 'qux/*'`.
 
 
 #### allow_buildfile_outside_basedir ####
