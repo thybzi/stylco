@@ -364,6 +364,8 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.5** *(2016-10-17)*:
+  * Support explicit index file import (with **[buildfile_explicit_indexfile_import](#buildfile_explicit_indexfile_import)** option)
 * **0.1.4** *(2016-03-17)*:
   * Allow creating file inside subdir of component directory (credits to @garyanikin)
 * **0.1.3** *(2016-02-21)*:
