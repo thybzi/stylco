@@ -90,6 +90,12 @@ Root directory for styles components, relative to project root. All component pa
 File extension for preprocessor style files. You may change to `.less` or `.scss` if you prefer.
 
 
+#### indexfile_id ####
+`string`, default: `"i"`
+
+[File identifier](#files) that represents component index file (root file that includes all other components file).
+
+
 #### import_rule ####
 `string`, default: `"@import"`
 
@@ -105,10 +111,23 @@ Outputs `@import 'foo/bar.less'` instead of `@import 'foo/bar'`.
 #### append_to_buildfile ####
 `boolean`, default: `false`
 
-When creating `qux/foobar` component, also add `@import 'qux/foobar'` into `qux.styl` buildfile. If `qux.styl` doesn't exist, it will be created. 
+When creating `qux/foobar` component, also add import line (like `@import 'qux/foobar'`) into `qux.styl` buildfile. 
+If `qux.styl` doesn't exist, it will be created.
 
 Enable this option if you prefer buildfiles with explicitly listed components, or when using LESS (which doesn't support 
 [import globbing](http://stylus-lang.com/docs/import.html#file-globbing) such as `@import 'qux/*'`.
+
+Exact behavior is affected by **[buildfile_explicit_indexfile_import](#buildfile_explicit_indexfile_import)** option.
+
+
+#### buildfile_explicit_indexfile_import ####
+`boolean`, default: `false`
+
+If set to `true`, **[append_to_buildfile](#append_to_buildfile)** imports [index file](#indexfile_id) explicitly 
+(otherwise, component directory path is imported).
+
+This option should be useful when using preprocessor *without* transparent index file imports 
+(such as [`index.styl` in Stylus](http://stylus-lang.com/docs/import.html#stylus-import)).
 
 
 #### allow_buildfile_outside_basedir ####
@@ -262,9 +281,11 @@ Here are default configuration values for Stylco. You can override any of them w
 {
     "basedir": "styl/",
     "file_ext": ".styl",
+    "indexfile_id": "i",
     "import_rule": "@import",
     "import_with_ext": false,
     "append_to_buildfile": false,
+    "buildfile_explicit_indexfile_import": false,
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
     "quote": "\"",

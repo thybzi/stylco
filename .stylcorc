@@ -1,9 +1,11 @@
 {
     "basedir": "styl/",
     "file_ext": ".styl",
+    "indexfile_id": "i",
     "import_rule": "@import",
     "import_with_ext": false,
     "append_to_buildfile": false,
+    "buildfile_explicit_indexfile_import": false,
     "allow_buildfile_outside_basedir": false,
     "use_semicolons": false,
     "quote": "\"",
