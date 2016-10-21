@@ -207,8 +207,8 @@ Consider component abstract if it is created inside directory with specified pre
 
 Abstract component is _not imported in any buildfile_, and is only used for as extend base for other components.
 
-For example, if you set this option to `"_"`, component `foo` created with directory `_common` (i.e. `_oommon/foo`,
-as well as `bar/_common/foo`) is recognized as virtual.
+For example, if you set this option to `"_"`, component `foo` created with directory `_common` (i.e. `_common/foo`,
+as well as `bar/_common/foo`) is recognized as abstract.
 
 If option value is `null`, no abstract component recognition is made, and every component is appended to buildfile
 (if [correspondent option](#append_to_buildfile) is enabled).
