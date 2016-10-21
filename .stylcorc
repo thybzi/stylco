@@ -14,6 +14,7 @@
     "ensure_trailing_newline": true,
     "file_write_options": "utf8",
     "virtual_component_prefix": null,
+    "abstract_dir_prefix": null,
     "files": {
         ".": {
             "filename": "{{NAME}}",
