@@ -379,6 +379,8 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.6** *(2016-10-21)*:
+  * Support abstract components which are never added to buildfile (with **[abstract_dir_prefix](#abstract_dir_prefix)** option)
 * **0.1.5** *(2016-10-17)*:
   * Support explicit index file import (with **[buildfile_explicit_indexfile_import](#buildfile_explicit_indexfile_import)** option)
 * **0.1.4** *(2016-03-17)*:
