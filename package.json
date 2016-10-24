@@ -1,6 +1,6 @@
 {
   "name": "stylco",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Command-line tool for creating Stylus components directory structure and imports",
   "main": "lib/stylco.js",
   "bin": "bin/stylco",

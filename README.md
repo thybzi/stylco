@@ -379,6 +379,8 @@ Adding new structure, you don't break things down. Deleting existing structure w
 
 ### Version history ###
 
+* **0.1.7** *(2016-10-25)*:
+  * Fix arguments order when checking whether buildfile is located outside basedir
 * **0.1.6** *(2016-10-21)*:
   * Support abstract components which are never added to buildfile (with **[abstract_dir_prefix](#abstract_dir_prefix)** option)
 * **0.1.5** *(2016-10-17)*:
